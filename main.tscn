@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8h7thigck2nv"]
+[gd_scene load_steps=5 format=3 uid="uid://c8h7thigck2nv"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_xo2c1"]
 [ext_resource type="Texture2D" uid="uid://c5cdb78xt6erv" path="res://dirt.png" id="2_1ebkp"]
+[ext_resource type="PackedScene" uid="uid://dij71r5lr0pv7" path="res://Island.tscn" id="3_ln1ga"]
+[ext_resource type="PackedScene" uid="uid://1brm6nk685o3" path="res://player.tscn" id="4_nvecd"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_xo2c1")
@@ -12,16 +14,13 @@ script = ExtResource("1_xo2c1")
 position = Vector2(65, 64)
 polygon = PackedVector2Array(127, 0, 127, 192, 191, 192, 191, 512, 831, 512, 831, 192, 895, 192, 895, 0, 1023, 0, 1087, 512, 1087, 584, -65, 584, -65, 512, -1, 0, 0, 0)
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(65, 64)
-polygon = PackedVector2Array(319, 256, 703, 256, 703, 320, 319, 320)
-
-[node name="LevelTexture" type="Polygon2D" parent="."]
+[node name="LevelTexture" type="Polygon2D" parent="Area2D/CollisionPolygon2D"]
 texture_repeat = 2
+position = Vector2(-65, -64)
 texture = ExtResource("2_1ebkp")
 polygon = PackedVector2Array(64, 64, 192, 64, 192, 256, 256, 256, 256, 576, 896, 576, 896, 256, 960, 256, 960, 64, 1088, 64, 1152, 576, 1152, 648, 0, 648, 0, 576)
 
-[node name="FloatingIslandTexture" type="Polygon2D" parent="."]
-texture_repeat = 2
-texture = ExtResource("2_1ebkp")
-polygon = PackedVector2Array(384, 320, 768, 320, 768, 384, 384, 384)
+[node name="CollisionPolygon2D2" parent="Area2D" instance=ExtResource("3_ln1ga")]
+
+[node name="Player" parent="." instance=ExtResource("4_nvecd")]
+position = Vector2(576, 256)

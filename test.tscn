@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdwsvgad8nfvt"]
+
+[ext_resource type="PackedScene" uid="uid://dij71r5lr0pv7" path="res://Island.tscn" id="1_us5fg"]
+[ext_resource type="PackedScene" uid="uid://1brm6nk685o3" path="res://player.tscn" id="2_pxy0s"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_pxy0s")]
+position = Vector2(584, 248)
+
+[node name="CollisionPolygon2D2" parent="." instance=ExtResource("1_us5fg")]
+position = Vector2(72, 72)

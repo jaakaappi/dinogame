@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 window/stretch/mode="viewport"
 
+[physics]
+
+3d/default_gravity=0.0
+3d/default_gravity_vector=Vector3(0, 0, 0)
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dij71r5lr0pv7"]
+
+[ext_resource type="Texture2D" uid="uid://c5cdb78xt6erv" path="res://dirt.png" id="1_gngkb"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(319, 256, 703, 256, 703, 320, 319, 320)
+
+[node name="FloatingIslandTexture" type="Polygon2D" parent="CollisionPolygon2D2"]
+texture_repeat = 2
+position = Vector2(-65, -64)
+texture = ExtResource("1_gngkb")
+polygon = PackedVector2Array(384, 320, 768, 320, 768, 384, 384, 384)
